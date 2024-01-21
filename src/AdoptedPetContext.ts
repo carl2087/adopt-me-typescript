@@ -1,10 +1,12 @@
 import { createContext } from "react";
 import { Pet } from "./APIResponsesTypes";
 
-// the below data is a default value to be used in the aopted pet context we could also use a null value
-// however we would have to chack if it was null throughout the app
+// the below data is a default value to be used in the adopted pet context we could also use a null value
+// however we would have to check if it was null throughout the app
 
-const AdoptedPetContext = createContext<[Pet, (adoptedPet: Pet) => void]>([
+const AdoptedPetContext = createContext<
+  [Pet | null, (adoptedPet: Pet) => void]
+>([
   {
     id: 1337,
     name: "Fido",
